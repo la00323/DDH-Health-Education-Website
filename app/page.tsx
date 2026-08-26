@@ -29,8 +29,11 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <section
-          className="relative bg-mint-bg bg-cover bg-center min-h-[230px] flex items-end px-6 sm:px-14 py-8 border-b-[3px] border-navy"
-          style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+          className="relative bg-mint-bg bg-repeat bg-top min-h-[230px] flex items-end px-6 sm:px-14 py-8 border-b-[3px] border-navy"
+          style={{
+            backgroundImage: "url('/hero-bg.jpg')",
+            backgroundSize: "560px auto",
+          }}
         >
           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(251,249,243,.96)_8%,rgba(251,249,243,.55)_55%,rgba(251,249,243,.15)_100%)]" />
         </section>
