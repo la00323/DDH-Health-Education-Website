@@ -36,7 +36,7 @@ export default function WhenToScreenPage() {
           </h2>
           <NoteBox title={a038.question}>{a038.shortAnswer}</NoteBox>
 
-          <div className="mt-8 text-body text-ink-2 font-light max-w-[54em]">
+          <div className="mt-8 text-body text-ink-2 font-light">
             <Markdown text={stripRefs(a038.detailAnswer)} />
           </div>
 
@@ -48,7 +48,7 @@ export default function WhenToScreenPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               為什麼是四到六週，不是一出生就照
             </h2>
-            <p className="mt-5 max-w-[46ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               出生後四週內，寶寶體內還有媽媽的荷爾蒙，關節囊極度鬆弛。這個時候照超音波會量到很差的角度，
               <span className="font-medium text-ink">
                 偽陽性高達九成
@@ -92,7 +92,7 @@ export default function WhenToScreenPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               您的寶寶可能符合其中一項
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               小兒骨科用「5F's」記住五個典型的高風險特徵。
               <span className="font-medium text-ink">
                 符合其中一項只代表「需要被檢查」，不代表寶寶有問題。
@@ -147,7 +147,7 @@ export default function WhenToScreenPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               檢查正常了，為什麼還要回診
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               這是門診最常接到的電話。答案是：因為 DDH
               是「發展性」的，出生正常不代表以後都正常；而且單次數字沒有意義，醫師要看的是趨勢。
             </p>

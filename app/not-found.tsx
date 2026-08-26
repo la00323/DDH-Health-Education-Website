@@ -13,14 +13,14 @@ export default function NotFound() {
           <div className="text-label font-mono tracking-[.16em] text-orange">
             找不到這一頁
           </div>
-          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] max-w-[18ch]">
+          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28]">
             這個網址可能已經換了
           </h1>
-          <p className="mt-5 max-w-[42ch] text-lede text-ink-2 font-light">
+          <p className="mt-5 text-lede text-ink-2 font-light">
             從下面這幾個地方，應該可以找到您要的內容。
           </p>
 
-          <ul className="mt-8 flex flex-col gap-3 max-w-[40em]">
+          <ul className="mt-8 flex flex-col gap-3">
             {topics.map((t) => (
               <li key={t.href}>
                 <Link

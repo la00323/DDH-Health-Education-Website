@@ -17,10 +17,10 @@ export function TopicPageHeader({
       <div className="text-label font-mono tracking-[.16em] text-orange">
         {eyebrow}
       </div>
-      <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] max-w-[18ch] text-balance">
+      <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] text-balance">
         {title}
       </h1>
-      <p className="mt-5 max-w-[42ch] text-lede text-ink-2 font-light">
+      <p className="mt-5 text-lede text-ink-2 font-light">
         {lede}
       </p>
     </section>
@@ -76,7 +76,7 @@ export function TopicNav({
   return (
     <nav className="mt-10 pt-8 border-t border-ink/10 flex flex-wrap gap-6 justify-between items-start">
       {prev ? (
-        <Link href={prev.href} className="group max-w-[24ch]">
+        <Link href={prev.href} className="group max-w-[15em]">
           <div className="text-label font-mono tracking-[.14em] text-ink-3">
             上一頁
           </div>
@@ -88,7 +88,7 @@ export function TopicNav({
         <span />
       )}
       {forward && (
-        <Link href={forward.href} className="group max-w-[28ch] sm:text-right">
+        <Link href={forward.href} className="group max-w-[18em] sm:text-right">
           <div className="text-label font-mono tracking-[.14em] text-ink-3">
             接下來
           </div>

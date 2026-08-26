@@ -42,7 +42,7 @@ export default function DailyCarePage() {
 
           <Figure id="three-habits" className="mt-8" priority />
 
-          <p className="mt-8 max-w-[48ch] text-lede text-ink-2 font-light">
+          <p className="mt-8 text-lede text-ink-2 font-light">
             這是高雄榮總護理衛教與國民健康署共同推廣的三句話口訣，涵蓋了嬰兒一天中最主要的三種姿勢。它完全免費、不需要任何器材，而且是
             <span className="font-medium text-ink">
               少數被證實有效的 DDH 預防措施
@@ -60,7 +60,7 @@ export default function DailyCarePage() {
               一
             </div>
             <h2 className="mt-4 font-bold font-serif text-h2">包開開</h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               口訣是
               <span className="font-medium text-ink">「包上不包下」</span>
               ——上半身可以適度包裹安撫保暖，下半身必須留下足夠空間。
@@ -82,7 +82,7 @@ export default function DailyCarePage() {
               把手輕輕伸進包巾的下半部——如果能輕鬆讓寶寶的膝蓋往兩側張開，就對了；如果感覺被綁住、張不開，就太緊了，請重包。
             </NoteBox>
 
-            <p className="mt-6 max-w-[48ch] text-body text-ink-2 font-light">
+            <p className="mt-6 text-body text-ink-2 font-light">
               有一個更簡單的替代方案：
               <span className="font-medium text-ink">
                 新生兒防踢被或寬鬆的防踢睡袋
@@ -97,7 +97,7 @@ export default function DailyCarePage() {
               二
             </div>
             <h2 className="mt-4 font-bold font-serif text-h2">抱開開</h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               直立式抱法——讓寶寶的大腿自然跨在您的腰部或腹部上，膝蓋略高於或等於臀部。
             </p>
 
@@ -128,7 +128,7 @@ export default function DailyCarePage() {
               三
             </div>
             <h2 className="mt-4 font-bold font-serif text-h2">背開開</h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               揹巾要認明
               <span className="font-medium text-ink">「寬基底」</span>
               設計——底部要夠寬，能從臀部一路托到膝窩。絕對避免雙腿無支撐地筆直下垂。
@@ -206,7 +206,7 @@ export default function DailyCarePage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               需要幫他做什麼運動嗎？
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               不需要。
               <span className="font-medium text-ink">
                 寶寶自己的自發踢腿就是最好的運動。

@@ -8,7 +8,7 @@ export function Footer() {
         <div className="font-black text-h3 text-white font-serif">
           {site.name}
         </div>
-        <p className="mt-4 text-caption leading-[1.85] font-light max-w-[22ch]">
+        <p className="mt-4 text-caption leading-[1.85] font-light max-w-[15em]">
           由兒童骨科個案管理團隊維護，內容依主治醫師指示為準。
         </p>
       </div>

@@ -23,12 +23,12 @@ export default function TreatmentPage() {
           <div className="text-label font-mono tracking-[.16em] text-orange">
             如果需要治療
           </div>
-          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] max-w-[18ch] text-balance">
+          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] text-balance">
             治療期間的照護
           </h1>
 
           {/* 界定範圍：擋住從 Google 搜「Graf IIa 治療」直接掉進來的人 */}
-          <div className="mt-6 max-w-[48ch] border-l-4 border-amber-border bg-amber-bg rounded-r-lg px-6 py-5">
+          <div className="mt-6 border-l-4 border-amber-border bg-amber-bg rounded-r-lg px-6 py-5">
             <p className="text-body text-ink font-light">
               以下內容適用於
               <span className="font-medium">已經確定需要治療</span>
@@ -45,7 +45,7 @@ export default function TreatmentPage() {
           <h2 className="font-bold font-serif text-h2">
             寶寶年紀 · 各階段照護重點
           </h2>
-          <p className="mt-4 max-w-[46ch] text-lede text-ink-2 font-light">
+          <p className="mt-4 text-lede text-ink-2 font-light">
             點選階段可以展開該階段的照護重點。實際的治療方式與時程一定要依主治醫師的安排。
           </p>
           <div className="mt-8">
@@ -59,7 +59,7 @@ export default function TreatmentPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               什麼情況要立刻回診
             </h2>
-            <div className="mt-8 max-w-[52em]">
+            <div className="mt-8">
               <AlertBox
                 title="立即回診：出現以下任一狀況"
                 items={[

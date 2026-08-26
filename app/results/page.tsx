@@ -125,7 +125,7 @@ export default function ResultsPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               報告上那個型，是什麼意思
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               講義給家長的簡化理解是：第一線只要分辨三種就夠——
               <span className="font-medium text-ink">
                 正常、一個月後再看、其他都轉診。
@@ -145,7 +145,7 @@ export default function ResultsPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               Type I ── 這是篩檢的終極目標
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               髖臼骨化程度已經達到三個月齡的成熟度，Alpha 角大於 60
               度。一旦確診為成熟的 Type I，預期終身健康。
             </p>
@@ -173,7 +173,7 @@ export default function ResultsPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               Type IIa ── 最常見的「一個月後再看一次」
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               IIa 指的是三個月以下寶寶的「生理性不成熟」——髖臼還沒長熟，但球穩穩在碗裡。它佔所有新生兒約
               10%，是相當常見的暫時狀態。
             </p>

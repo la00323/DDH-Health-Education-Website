@@ -29,10 +29,10 @@ export default function Home() {
           <div className="text-label font-mono tracking-[.16em] text-orange">
             DDH CARE · 高雄榮民總醫院
           </div>
-          <h1 className="mt-6 font-black font-serif text-[34px] sm:text-[52px] leading-[1.25] max-w-[16ch] text-balance">
+          <h1 className="mt-6 font-black font-serif text-[34px] sm:text-[52px] leading-[1.25] text-balance">
             寶寶被安排做髖關節超音波
           </h1>
-          <p className="mt-6 max-w-[44ch] text-lede text-ink-2 font-light">
+          <p className="mt-6 text-lede text-ink-2 font-light">
             您的寶寶因為有一項危險因子，被安排了髖關節超音波檢查。
             <span className="font-medium text-ink bg-[linear-gradient(transparent_62%,var(--color-mint)_62%)]">
               這件事最常見的結果是：一切正常。
@@ -122,7 +122,7 @@ export default function Home() {
           <h2 className="font-black font-serif text-[30px] sm:text-[38px] leading-[1.35] text-navy tracking-[.03em]">
             包開開・抱開開・背開開
           </h2>
-          <p className="mt-5 max-w-[46ch] text-lede text-ink-2 font-light">
+          <p className="mt-5 text-lede text-ink-2 font-light">
             出生時關節鬆動的寶寶，兩週後約九成會自然穩定
             ——
             <span className="font-medium text-ink">
@@ -144,7 +144,7 @@ export default function Home() {
             常見問題
           </div>
           <h2 className="font-bold font-serif text-h2">家長最常問的三題</h2>
-          <p className="mt-4 max-w-[42ch] text-lede text-ink-2 font-light">
+          <p className="mt-4 text-lede text-ink-2 font-light">
             完整的 298 題可以搜尋關鍵字，或依階段分類查看。
           </p>
           <QaList ids={["A-038", "C-003", "D-004"]} title="" />
@@ -165,7 +165,7 @@ export default function Home() {
           </NoteBox>
 
           <div className="flex flex-wrap items-center gap-5 justify-between bg-[#F5F2E9] border border-ink/[.08] rounded-xl px-6 py-6 mt-6">
-            <p className="text-caption text-ink-2 font-light max-w-[46ch]">
+            <p className="text-caption text-ink-2 font-light">
               已經確診、正在使用吊帶或石膏？治療期間的照護步驟、回診節奏與警訊判斷都在這裡。
             </p>
             <Button href="/treatment" variant="outline">

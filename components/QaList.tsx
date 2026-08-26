@@ -26,16 +26,13 @@ export function QaList({
       {title && (
         <h2 className="font-bold font-serif text-h2 mb-5 mt-5">{title}</h2>
       )}
-      <div className="bg-surface border border-ink/[.12] rounded-xl overflow-hidden max-w-[54em]">
+      <div className="bg-surface border border-ink/[.12] rounded-xl overflow-hidden">
         {entries.map((f) => (
           <details
             key={f.id}
             className="border-b border-ink/[.08] last:border-b-0 group"
           >
             <summary className="flex gap-4 items-center px-5 sm:px-6 py-5 cursor-pointer list-none hover:bg-[#f8f5ec] transition-colors duration-150 [&::-webkit-details-marker]:hidden">
-              <span className="shrink-0 text-label font-mono text-orange">
-                {f.id}
-              </span>
               <span className="flex-1 font-medium text-body leading-[1.6]">
                 {f.question}
               </span>
@@ -44,7 +41,7 @@ export function QaList({
                 <span className="hidden group-open:inline">−</span>
               </span>
             </summary>
-            <div className="px-5 sm:px-6 pb-6 sm:pl-[4.5rem]">
+            <div className="px-5 sm:px-6 pb-6">
               <p className="text-body font-medium text-ink mb-3">
                 {stripRefs(f.shortAnswer)}
               </p>

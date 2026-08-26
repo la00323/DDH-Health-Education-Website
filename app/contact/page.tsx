@@ -19,16 +19,16 @@ export default function ContactPage() {
           <div className="text-label font-mono tracking-[.16em] text-orange">
             聯絡我們
           </div>
-          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] max-w-[18ch] text-balance">
+          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] text-balance">
             聯絡個管師
           </h1>
-          <p className="mt-5 max-w-[42ch] text-lede text-ink-2 font-light">
+          <p className="mt-5 text-lede text-ink-2 font-light">
             有任何照護上的疑問，都歡迎在門診時間聯絡個管師。不確定要不要打的時候，就打。
           </p>
         </section>
 
         <div className="max-w-[1180px] mx-auto px-6 sm:px-14 py-12">
-          <div className="grid gap-5 grid-cols-1 md:grid-cols-2 max-w-[52em]">
+          <div className="grid gap-5 grid-cols-1 md:grid-cols-2">
             <div className="bg-surface border border-ink/[.12] rounded-xl p-7">
               <div className="text-label font-mono tracking-[.14em] text-ink-3">
                 個管專線
@@ -55,7 +55,7 @@ export default function ContactPage() {
             <h2 className="font-bold font-serif text-h2">
               什麼情況該直接掛急診
             </h2>
-            <div className="mt-7 max-w-[52em]">
+            <div className="mt-7">
               <AlertBox
                 title="不要等下次回診，也不要等電話"
                 items={[

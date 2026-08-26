@@ -34,7 +34,7 @@ export default function AboutDdhPage() {
           <h2 className="font-bold font-serif text-h2">
             髖關節就是一個球放在碗裡
           </h2>
-          <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+          <p className="mt-5 text-lede text-ink-2 font-light">
             大腿骨最上端是一顆圓球（股骨頭），骨盆上有一個凹槽（髖臼）。正常情況下，球會穩穩嵌在碗裡。
             <span className="font-medium text-ink">
               DDH 就是這個碗太淺、或球沒有好好待在碗裡。
@@ -61,7 +61,7 @@ export default function AboutDdhPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               為什麼叫「發展性」，不叫「先天性」
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               因為它不是出生那一刻就定型的畸形，而是從懷孕後期、出生後到嬰兒期會一直
               <span className="font-medium text-ink">
                 動態變化
@@ -89,7 +89,7 @@ export default function AboutDdhPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               這是一條光譜，不是一個開關
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               從「只是關節有點鬆」到「完全脫臼」都叫 DDH，中間的差別非常大。
               <span className="font-medium text-ink">
                 聽到這個名詞先不要慌，要先問醫師落在哪一段。
@@ -123,7 +123,7 @@ export default function AboutDdhPage() {
               ]}
             />
 
-            <div className="mt-8 text-body text-ink-2 font-light max-w-[54em]">
+            <div className="mt-8 text-body text-ink-2 font-light">
               <Markdown text={stripRefs(a005.detailAnswer)} />
             </div>
           </section>
@@ -136,7 +136,7 @@ export default function AboutDdhPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               這不是您造成的
             </h2>
-            <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               懷孕後期讓寶寶動不了、腿被固定在伸直併攏姿勢的外在因素——臀位、羊水過少、多胞胎、第一胎子宮較緊——都屬於「子宮內機械因素」。這些都不是任何人能控制的。
             </p>
 

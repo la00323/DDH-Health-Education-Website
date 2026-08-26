@@ -30,7 +30,7 @@ export default function ScreeningPage() {
           <h2 className="font-bold font-serif text-h2">
             為什麼是超音波，不是 X 光
           </h2>
-          <p className="mt-5 max-w-[48ch] text-lede text-ink-2 font-light">
+          <p className="mt-5 text-lede text-ink-2 font-light">
             六個月內的寶寶，髖關節最關鍵的部分還是軟骨——
             <span className="font-medium text-ink">
               而 X 光照不出軟骨
@@ -48,7 +48,7 @@ export default function ScreeningPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               有些狀況是摸不出來的
             </h2>
-            <p className="mt-5 max-w-[50ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               醫師徒手檢查時做的是兩個方向相反的動作：Barlow 試著把球「推出去」看穩不穩，Ortolani
               試著把球「推回來」看能不能復位。這是很重要的第一關，但它有極限——
               <span className="font-medium text-ink">
@@ -108,7 +108,7 @@ export default function ScreeningPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               為什麼別人家的寶寶沒照，我們要照
             </h2>
-            <p className="mt-5 max-w-[50ch] text-lede text-ink-2 font-light">
+            <p className="mt-5 text-lede text-ink-2 font-light">
               台灣採
               <span className="font-medium text-ink">選擇性篩檢</span>
               ——不是每個寶寶都照超音波，只有有危險因子、或徒手檢查異常的寶寶才安排。這就是為什麼有些寶寶做了、有些沒做。

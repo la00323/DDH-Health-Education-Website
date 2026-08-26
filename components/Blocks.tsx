@@ -5,6 +5,7 @@ import { Figure } from "./Figure";
 export function StatRow({
   stats,
 }: {
+  /** source 是知識庫題號，保留在資料裡供院內審閱追溯，不顯示給家長看 */
   stats: { value: string; label: string; source?: string; tone?: "navy" | "orange" }[];
 }) {
   return (
@@ -18,14 +19,9 @@ export function StatRow({
           >
             {s.value}
           </div>
-          <div className="mt-3 text-caption text-ink-2 max-w-[16ch]">
+          <div className="mt-3 text-caption text-ink-2 max-w-[15em]">
             {s.label}
           </div>
-          {s.source && (
-            <div className="mt-1.5 text-label font-mono text-ink-3/70">
-              {s.source}
-            </div>
-          )}
         </div>
       ))}
     </div>
@@ -200,7 +196,7 @@ export function QuickRouter({
   items: { q: string; dest: string; href: string }[];
 }) {
   return (
-    <div className="bg-surface border border-ink/[.12] rounded-xl overflow-hidden mt-7 max-w-[54em]">
+    <div className="bg-surface border border-ink/[.12] rounded-xl overflow-hidden mt-7">
       {items.map((it) => (
         <a
           key={it.q}

@@ -19,12 +19,12 @@ export default function DisclaimerPage() {
           <div className="text-label font-mono tracking-[.16em] text-orange">
             免責聲明
           </div>
-          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] max-w-[18ch] text-balance">
+          <h1 className="mt-5 font-black font-serif text-[32px] sm:text-h1 leading-[1.28] text-balance">
             這個網站能做什麼、不能做什麼
           </h1>
         </section>
 
-        <div className="max-w-[1180px] mx-auto px-6 sm:px-14 py-12 max-w-[52em]">
+        <div className="max-w-[1180px] mx-auto px-6 sm:px-14 py-12">
           <p className="text-body text-ink-2 font-light">{site.disclaimer}</p>
 
           <h2 className="mt-12 font-bold font-serif text-h2">這裡可以做的</h2>

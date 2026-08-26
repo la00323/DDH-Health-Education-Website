@@ -102,7 +102,7 @@ export function FaqSearchPage({ faqs }: { faqs: FaqEntry[] }) {
 
   return (
     <div>
-      <div className="max-w-[46em] mb-6">
+      <div className=" mb-6">
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}

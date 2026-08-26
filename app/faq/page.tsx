@@ -23,7 +23,7 @@ export default function FaqPage() {
           <h1 className="font-black font-serif text-[32px] sm:text-[42px] leading-[1.3]">
             DDH 家長常見問題
           </h1>
-          <p className="mt-4 max-w-[42em] text-lede leading-[1.9] text-ink-2 font-light">
+          <p className="mt-4 text-lede leading-[1.9] text-ink-2 font-light">
             收錄 {faqs.length} 題家長最常問的問題，依照護階段分類，也可以直接搜尋關鍵字（例如「洗澡」「安全座椅」「發燒」）。
           </p>
         </section>

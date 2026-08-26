@@ -66,11 +66,6 @@ export function Figure({
           <span className="text-caption text-ink-2 font-light">
             {slot.caption}
           </span>
-          {slot.source && (
-            <span className="text-label font-mono text-ink-3 whitespace-nowrap">
-              依據 {slot.source}
-            </span>
-          )}
         </figcaption>
       )}
     </figure>

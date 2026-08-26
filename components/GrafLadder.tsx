@@ -80,7 +80,7 @@ function Row({ r, big = false }: { r: Rung; big?: boolean }) {
           {r.type}
           <span className="text-ink-2 font-normal"> ・ {r.meaning}</span>
         </div>
-        <p className="mt-2.5 text-caption text-ink-2 font-light max-w-[46ch]">
+        <p className="mt-2.5 text-caption text-ink-2 font-light">
           {r.desc}
         </p>
       </div>
@@ -113,7 +113,7 @@ export function GrafLadder() {
           </span>
         </summary>
         <div className="px-6 pb-6 pt-1 border-t border-ink/[.08]">
-          <p className="mt-4 mb-5 text-caption text-ink-2 font-light max-w-[52ch]">
+          <p className="mt-4 mb-5 text-caption text-ink-2 font-light">
             以下幾型都需要兒童骨科進一步評估。實際處置一定要依主治醫師當面判斷，不要只看這一頁自行推論。
           </p>
           <div className="flex flex-col gap-3">
