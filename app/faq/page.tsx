@@ -17,13 +17,13 @@ export default function FaqPage() {
       <Header />
       <main className="flex-1">
         <section className="max-w-[1180px] mx-auto px-6 sm:px-14 pt-12 pb-8 border-b border-ink/10">
-          <div className="text-[12px] font-mono tracking-[.16em] text-orange mb-3.5">
+          <div className="text-label font-mono tracking-[.16em] text-orange mb-3.5">
             常見問題
           </div>
           <h1 className="font-black font-serif text-[32px] sm:text-[42px] leading-[1.3]">
             DDH 家長常見問題
           </h1>
-          <p className="mt-4 max-w-[42em] text-[15.5px] leading-[1.9] text-ink-2 font-light">
+          <p className="mt-4 max-w-[42em] text-lede leading-[1.9] text-ink-2 font-light">
             收錄 {faqs.length} 題家長最常問的問題，依照護階段分類，也可以直接搜尋關鍵字（例如「洗澡」「安全座椅」「發燒」）。
           </p>
         </section>

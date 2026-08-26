@@ -32,3 +32,29 @@ export const categories = [
 export function categoryOf(id: string) {
   return id.split("-")[0];
 }
+
+const byIdMap = new Map(faqs.map((f) => [f.id, f]));
+
+export function byId(id: string): FaqEntry {
+  const entry = byIdMap.get(id);
+  if (!entry) throw new Error(`知識庫沒有題號 "${id}"`);
+  return entry;
+}
+
+/** 依題號取出多題，順序照傳入的陣列 */
+export function getFaqs(ids: string[]): FaqEntry[] {
+  return ids.map(byId);
+}
+
+/**
+ * 拿掉內文裡的交叉引用標記，例如「（見 D-002）」「（見 E 類）」。
+ *
+ * 這些標記在 /faq 上還好（畫面上看得到題號），但放進主題頁的內文
+ * 就是家長無法解讀的雜訊——298 題裡有 131 則帶著這種標記。
+ */
+export function stripRefs(text: string): string {
+  return text
+    .replace(/（見[^）]*）/g, "")
+    .replace(/\(見[^)]*\)/g, "")
+    .replace(/[ \t]+([，。、；：])/g, "$1");
+}

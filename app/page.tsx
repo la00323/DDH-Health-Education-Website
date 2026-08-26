@@ -1,33 +1,19 @@
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { StageTimeline } from "@/components/StageTimeline";
-import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
-import { AlertBox } from "@/components/InfoBox";
 import { Button } from "@/components/Button";
-
-const homeFaqs: FaqItem[] = [
-  {
-    id: "E-024",
-    q: "穿吊帶可以洗澡嗎？",
-    a: "可以。洗澡時可暫時解開搭扣拆下，洗完立刻穿回，全程盡量讓雙腿保持分開。但是否可以拆，要由醫師決定——有些寶寶（例如 Ortolani 陽性）不能自行拆卸，請務必先在門診問清楚。",
-  },
-  {
-    id: "E-033",
-    q: "穿吊帶可以坐汽車安全座椅嗎？",
-    a: "可以，而且必須用汽座（法律規定＋安全考量）。需要選下半部空間夠寬的款式，讓雙腿保持外展，安全帶繫緊但不要壓迫腿帶。如果現有汽座塞不下，回診時可請教醫師或個管師建議。",
-  },
-  {
-    id: "F-007",
-    q: "打石膏後要怎麼換尿布？",
-    a: "把小一號的尿布塞入石膏與屁股之間，外面再插入一片夜安型衛生棉防滲漏，然後勤更換。石膏受潮會軟化失效，也容易造成皮膚潰爛與感染，發現潮濕要立即回診。",
-  },
-];
+import { TopicCardGrid } from "@/components/Topic";
+import { StatRow, QuickRouter } from "@/components/Blocks";
+import { QaList } from "@/components/QaList";
+import { Figure } from "@/components/Figure";
+import { NoteBox } from "@/components/InfoBox";
 
 export default function Home() {
   return (
     <>
       <Header />
       <main className="flex-1">
+        {/* 頁首橫幅：維持原本的底圖與米白漸層罩，純裝飾、上面不壓字 */}
         <section
           className="relative bg-mint-bg bg-repeat bg-top min-h-[230px] flex items-end px-6 sm:px-14 py-8 border-b-[3px] border-navy"
           style={{
@@ -38,87 +24,152 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(251,249,243,.96)_8%,rgba(251,249,243,.55)_55%,rgba(251,249,243,.15)_100%)]" />
         </section>
 
+        {/* 標題區：第一句就點名讀者的處境 */}
         <section className="max-w-[1180px] mx-auto px-6 sm:px-14 pt-14 pb-16 border-b border-ink/10">
-          <div className="flex items-baseline gap-3 text-[12px] font-mono tracking-[.16em] text-orange">
-            <span>DDH CARE · 家長照護指南</span>
+          <div className="text-label font-mono tracking-[.16em] text-orange">
+            DDH CARE · 高雄榮民總醫院
           </div>
-          <h1 className="mt-6 font-black font-serif text-[38px] sm:text-[56px] leading-[1.25] max-w-[15em]">
-            髖關節發育不良
-            <br />
-            家長照護指南
+          <h1 className="mt-6 font-black font-serif text-[34px] sm:text-[52px] leading-[1.25] max-w-[16ch] text-balance">
+            寶寶被安排做髖關節超音波
           </h1>
-          <p className="mt-6 max-w-[40em] text-[17.5px] leading-[1.95] text-ink-2 font-light">
-            從診斷、吊帶、石膏到術後追蹤，這裡整理了每個階段最需要知道的照護重點與警訊判斷。有任何疑問，隨時可以聯絡個管師。
+          <p className="mt-6 max-w-[44ch] text-lede text-ink-2 font-light">
+            您的寶寶因為有一項危險因子，被安排了髖關節超音波檢查。
+            <span className="font-medium text-ink bg-[linear-gradient(transparent_62%,var(--color-mint)_62%)]">
+              這件事最常見的結果是：一切正常。
+            </span>
+            這個網站陪您把接下來幾週該知道的事看完。
           </p>
-          <div className="flex flex-wrap gap-9 mt-10 pt-7 border-t border-ink/10">
-            <div>
-              <div className="font-bold text-[30px] font-mono text-navy leading-none">
-                4
-              </div>
-              <div className="mt-2 text-[13px] text-ink-3">個 · 治療階段</div>
-            </div>
-            <div>
-              <div className="font-bold text-[30px] font-mono text-navy leading-none">
-                300
-              </div>
-              <div className="mt-2 text-[13px] text-ink-3">題 · 常見問答</div>
-            </div>
-            <div>
-              <div className="font-bold text-[30px] font-mono text-orange leading-none">
-                1%
-              </div>
-              <div className="mt-2 text-[13px] text-ink-3">
-                新生兒 · DDH 發生率
-              </div>
-            </div>
-          </div>
+
           <div className="flex flex-wrap gap-3 mt-8">
-            <Button href="/contact" variant="primary">
-              預約回診
+            <Button href="/when-to-screen" variant="primary">
+              醫師說要回來照 →
             </Button>
-            <Button href="/guide" variant="secondary">
-              看照護步驟
+            <Button href="/results" variant="secondary">
+              我拿到報告了 →
             </Button>
           </div>
-        </section>
 
-        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14 border-b border-ink/10">
-          <div className="text-[12px] font-mono tracking-[.16em] text-orange mb-3.5">
-            治療路徑
-          </div>
-          <h2 className="font-bold font-serif text-[26px] sm:text-[28px] leading-[1.4] mb-6">
-            寶寶年紀 · 各階段照護重點
-          </h2>
-          <StageTimeline />
-        </section>
-
-        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14 border-b border-ink/10">
-          <AlertBox
-            title="立即回診：出現以下任一狀況"
-            items={[
-              "腳趾發紫、發白或冰冷",
-              "吊帶下皮膚破皮、紅腫或壓傷",
-              "吊帶鬆脫、綁帶位置跑掉",
-              "石膏散發異味或明顯潮濕",
+          <StatRow
+            stats={[
+              {
+                value: "1.5‰",
+                label: "台灣每 1,000 名新生兒約 1.5 位",
+                source: "A-005",
+              },
+              {
+                value: "9 成",
+                label: "出生時關節鬆動的寶寶，兩週內自然穩定",
+                source: "A-019",
+              },
+              {
+                value: "4–6 週",
+                label: "建議做超音波檢查的時間",
+                source: "B-005",
+                tone: "orange",
+              },
             ]}
-            action="→ 白天請電個管師 (02) 2727-5374；夜間直接掛急診"
           />
         </section>
 
-        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14">
-          <div className="text-[12px] font-mono tracking-[.16em] text-orange mb-3.5">
+        {/* 五大主題卡片 */}
+        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14 border-b border-ink/10">
+          <div className="text-label font-mono tracking-[.16em] text-orange mb-4">
+            從這五件事開始
+          </div>
+          <h2 className="font-bold font-serif text-h2 mb-8">
+            您現在最需要知道的
+          </h2>
+          <TopicCardGrid />
+        </section>
+
+        {/* 快速分流：直接跳到段落，不只是頁面 */}
+        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14 border-b border-ink/10">
+          <div className="text-label font-mono tracking-[.16em] text-orange mb-4">
+            直接找到您要的那一段
+          </div>
+          <h2 className="font-bold font-serif text-h2">我現在的情況是⋯</h2>
+          <QuickRouter
+            items={[
+              {
+                q: "醫師說要四到六週再回來照",
+                dest: "什麼時候該檢查",
+                href: "/when-to-screen",
+              },
+              {
+                q: "報告上寫 Type I",
+                dest: "看懂檢查結果",
+                href: "/results#type-i",
+              },
+              {
+                q: "報告上寫 IIa",
+                dest: "看懂檢查結果",
+                href: "/results#type-iia",
+              },
+              {
+                q: "醫師說要開始治療",
+                dest: "如果需要治療",
+                href: "/treatment",
+              },
+            ]}
+          />
+        </section>
+
+        {/* 三要訣：這六週真正能做的事 */}
+        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14 border-b border-ink/10">
+          <div className="text-label font-mono tracking-[.16em] text-orange mb-4">
+            這幾週您可以做的事
+          </div>
+          <h2 className="font-black font-serif text-[30px] sm:text-[38px] leading-[1.35] text-navy tracking-[.03em]">
+            包開開・抱開開・背開開
+          </h2>
+          <p className="mt-5 max-w-[46ch] text-lede text-ink-2 font-light">
+            出生時關節鬆動的寶寶，兩週後約九成會自然穩定
+            ——
+            <span className="font-medium text-ink">
+              但前提是雙腿能自由彎曲外展
+            </span>
+            。把腿包緊，會直接關掉這個機制。
+          </p>
+          <Figure id="three-habits" className="mt-8" />
+          <div className="flex flex-wrap gap-3 mt-7">
+            <Button href="/daily-care" variant="primary">
+              看完整做法 →
+            </Button>
+          </div>
+        </section>
+
+        {/* 常見問題預覽 */}
+        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14 border-b border-ink/10">
+          <div className="text-label font-mono tracking-[.16em] text-orange mb-4">
             常見問題
           </div>
-          <h2 className="font-bold font-serif text-[26px] sm:text-[28px] leading-[1.4] mb-2.5">
-            家長最常問的幾個問題
-          </h2>
-          <p className="mb-6 max-w-[38em] text-[15px] leading-[1.9] text-ink-2 font-light">
-            這裡先列出幾個高頻提問，完整的 298 題常見問答可以搜尋或依階段分類查看。
+          <h2 className="font-bold font-serif text-h2">家長最常問的三題</h2>
+          <p className="mt-4 max-w-[42ch] text-lede text-ink-2 font-light">
+            完整的 298 題可以搜尋關鍵字，或依階段分類查看。
           </p>
-          <FaqAccordion faqs={homeFaqs} />
-          <div className="mt-6">
+          <QaList ids={["A-038", "C-003", "D-004"]} title="" />
+          <div className="mt-7">
             <Button href="/faq" variant="outline">
               查看完整常見問題 →
+            </Button>
+          </div>
+        </section>
+
+        {/* 情緒支持 + 治療入口 */}
+        <section className="max-w-[1180px] mx-auto px-6 sm:px-14 py-14">
+          <NoteBox title="如果您這幾天一直睡不好">
+            擔心是正常的，而且很常見。知識庫裡有一整類是寫給家長自己的——包含「是不是我的錯」「長輩一直說是我害的」「我一天檢查孩子的腿好多次」這些沒人敢問的問題。
+            <Link href="/faq?cat=J" className="ml-1 font-medium underline">
+              看這一類 →
+            </Link>
+          </NoteBox>
+
+          <div className="flex flex-wrap items-center gap-5 justify-between bg-[#F5F2E9] border border-ink/[.08] rounded-xl px-6 py-6 mt-6">
+            <p className="text-caption text-ink-2 font-light max-w-[46ch]">
+              已經確診、正在使用吊帶或石膏？治療期間的照護步驟、回診節奏與警訊判斷都在這裡。
+            </p>
+            <Button href="/treatment" variant="outline">
+              如果需要治療 →
             </Button>
           </div>
         </section>

@@ -20,7 +20,7 @@ export function AlertBox({
   return (
     <div className="border-[1.5px] border-alert bg-alert-bg rounded-lg px-6 py-[22px]">
       <div className="font-bold text-sm text-alert mb-3">{title}</div>
-      <div className="flex flex-col gap-[9px] text-[15px] leading-[1.8] text-[#3d3b36] font-light">
+      <div className="flex flex-col gap-[9px] text-body leading-[1.8] text-[#3d3b36] font-light">
         {items.map((it) => (
           <div key={it} className="flex gap-2.5">
             <span className="text-alert">▲</span>
@@ -28,7 +28,7 @@ export function AlertBox({
           </div>
         ))}
       </div>
-      <div className="mt-4 text-[13.5px] font-medium leading-[1.7] text-alert">
+      <div className="mt-4 text-caption font-medium leading-[1.7] text-alert">
         {action}
       </div>
     </div>
@@ -45,7 +45,7 @@ export function NoteBox({
   return (
     <div className="border-l-4 border-navy bg-mint rounded-r-lg px-6 py-[22px]">
       <div className="font-bold text-sm text-navy mb-2.5">{title}</div>
-      <p className="text-[15px] leading-[1.85] text-[#3d3b36] font-light">
+      <p className="text-body leading-[1.85] text-[#3d3b36] font-light">
         {children}
       </p>
     </div>
@@ -55,10 +55,10 @@ export function NoteBox({
 export function SummaryBox({ children }: { children: ReactNode }) {
   return (
     <div className="border border-amber-border bg-amber-bg rounded-lg px-6 py-[22px]">
-      <div className="font-medium text-[11px] tracking-[.14em] text-amber-text mb-2.5">
+      <div className="font-medium text-label tracking-[.14em] text-amber-text mb-2.5">
         小結
       </div>
-      <p className="text-[15px] leading-[1.85] text-[#3d3b36] font-light">
+      <p className="text-body leading-[1.85] text-[#3d3b36] font-light">
         {children}
       </p>
     </div>
@@ -68,10 +68,10 @@ export function SummaryBox({ children }: { children: ReactNode }) {
 export function DisclaimerBox({ children }: { children: ReactNode }) {
   return (
     <div className="border border-ink/[.14] bg-surface rounded-lg px-6 py-[22px]">
-      <div className="font-medium text-[13px] text-ink-3 mb-2.5">
+      <div className="font-medium text-caption text-ink-3 mb-2.5">
         ※ 免責聲明
       </div>
-      <p className="text-[14.5px] leading-[1.85] text-ink-2 font-light">
+      <p className="text-caption leading-[1.85] text-ink-2 font-light">
         {children}
       </p>
     </div>

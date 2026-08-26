@@ -75,6 +75,25 @@
   --font-serif: var(--font-noto-serif-tc), "Noto Serif TC", serif;
   --font-sans: var(--font-noto-sans-tc), "Noto Sans TC", system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+
+  /* 字級：中文在同樣 px 下比拉丁字母難讀，這組尺度是給
+     深夜滑手機的家長（有時還有長輩一起看）用的。全站最小 14px。 */
+  --text-label: 14px;          /* 小標籤、eyebrow、出處 */
+  --text-label--line-height: 1.6;
+  --text-caption: 16px;        /* 圖說、次要說明 */
+  --text-caption--line-height: 1.8;
+  --text-body: 18px;           /* 內文 */
+  --text-body--line-height: 1.9;
+  --text-lede: 20px;           /* 段落導言 */
+  --text-lede--line-height: 1.9;
+  --text-h3: 22px;             /* 小標題 */
+  --text-h3--line-height: 1.5;
+  --text-h2: 28px;             /* 段落標題 */
+  --text-h2--line-height: 1.4;
+  --text-h1: 40px;             /* 大標題 */
+  --text-h1--line-height: 1.25;
+  --text-stat: 38px;           /* 數字列 */
+  --text-stat--line-height: 1;
 }
 
 body {

@@ -41,13 +41,13 @@ function renderTable(lines: string[], key: string) {
   const [head, ...body] = rows;
   return (
     <div key={key} className="overflow-x-auto my-3">
-      <table className="w-full border-collapse text-[14.5px]">
+      <table className="w-full border-collapse text-caption">
         <thead>
           <tr>
             {head.map((c, i) => (
               <th
                 key={i}
-                className="text-left px-4 py-3 bg-navy text-white font-medium text-[13px]"
+                className="text-left px-4 py-3 bg-navy text-white font-medium text-label"
               >
                 {renderInline(c, `${key}-th-${i}`)}
               </th>
@@ -91,8 +91,8 @@ export function Markdown({ text }: { text: string }) {
           const content = renderInline(m[2], key);
           const cls =
             level === 2
-              ? "font-bold text-[17px] mt-1"
-              : "font-bold text-[15px] mt-1";
+              ? "font-bold text-lede mt-1"
+              : "font-bold text-body mt-1";
           return (
             <div key={key} className={cls}>
               {content}

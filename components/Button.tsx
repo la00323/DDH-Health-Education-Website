@@ -30,7 +30,7 @@ export function Button({
   type?: "button" | "submit";
 }) {
   const base =
-    "inline-flex items-center justify-center font-medium text-[15px] leading-none rounded-full px-7 py-[15px]";
+    "inline-flex items-center justify-center font-medium text-body leading-none rounded-full px-7 py-[15px] no-underline";
   const cls = `${base} ${variantClass[disabled ? "disabled" : variant]}`;
 
   if (href && !disabled) {

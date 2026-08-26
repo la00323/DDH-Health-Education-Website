@@ -40,8 +40,8 @@ export function StageTimeline({ defaultStage = 0 }: { defaultStage?: number }) {
     <div className="border border-ink/[.12] rounded-lg overflow-hidden bg-surface">
       <div className="bg-amber-bg px-5 sm:px-6 pt-[22px] pb-[26px]">
         <div className="flex justify-between items-baseline mb-4">
-          <span className="text-[13px] text-ink-3">寶寶年紀 · 治療路徑</span>
-          <span className="text-[11px] font-mono text-ink-3 tracking-[.1em]">
+          <span className="text-caption text-ink-3">寶寶年紀 · 治療路徑</span>
+          <span className="text-label font-mono text-ink-3 tracking-[.1em]">
             0M → 1Y+
           </span>
         </div>
@@ -64,7 +64,7 @@ export function StageTimeline({ defaultStage = 0 }: { defaultStage?: number }) {
                   className="h-1 rounded-full"
                   style={{ background: s.color }}
                 />
-                <div className="mt-3 text-[11px] font-mono tracking-[.1em] text-ink-3">
+                <div className="mt-3 text-label font-mono tracking-[.1em] text-ink-3">
                   {s.age}
                 </div>
                 <h3
@@ -76,14 +76,14 @@ export function StageTimeline({ defaultStage = 0 }: { defaultStage?: number }) {
                 </h3>
                 {on && (
                   <div className="animate-ds-fade">
-                    <p className="mt-3 text-[15.5px] leading-[1.9] text-ink-2 font-light max-w-[34em]">
+                    <p className="mt-3 text-body leading-[1.9] text-ink-2 font-light max-w-[34em]">
                       {s.body}
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3.5">
                       {s.items.map((it) => (
                         <span
                           key={it}
-                          className="text-[13px] px-3.5 py-2 rounded-full bg-white text-ink-2 border border-ink/10"
+                          className="text-caption px-3.5 py-2 rounded-full bg-white text-ink-2 border border-ink/10"
                         >
                           {it}
                         </span>
