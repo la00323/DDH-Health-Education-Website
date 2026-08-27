@@ -97,16 +97,12 @@ export function DoDontPair({
   return (
     <div className="[&:not(:first-child)]:mt-8">
       {imageId && <Figure id={imageId} className="mb-5" />}
+      {/*
+        左錯右對，順序刻意跟上方的對照圖一致。
+        三張對照圖（包巾、抱姿、揹巾）都是「錯誤在左、正確在右」，
+        文字卡如果反過來排，圖跟字會左右鏡像，家長會看錯邊。
+      */}
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
-        <div className="border border-navy/25 bg-mint rounded-xl px-6 py-5">
-          <div className="flex gap-2.5 items-center">
-            <span className="w-6 h-6 rounded-full bg-navy text-white inline-flex items-center justify-center text-[14px]">
-              ✓
-            </span>
-            <span className="font-bold text-h3 text-navy">{good.title}</span>
-          </div>
-          <p className="mt-3 text-caption text-ink-2 font-light">{good.body}</p>
-        </div>
         <div className="border border-ink/15 bg-[#F5F2E9] rounded-xl px-6 py-5">
           <div className="flex gap-2.5 items-center">
             <span className="w-6 h-6 rounded-full bg-ink-3 text-white inline-flex items-center justify-center text-[14px]">
@@ -115,6 +111,15 @@ export function DoDontPair({
             <span className="font-bold text-h3 text-ink-2">{bad.title}</span>
           </div>
           <p className="mt-3 text-caption text-ink-2 font-light">{bad.body}</p>
+        </div>
+        <div className="border border-navy/25 bg-mint rounded-xl px-6 py-5">
+          <div className="flex gap-2.5 items-center">
+            <span className="w-6 h-6 rounded-full bg-navy text-white inline-flex items-center justify-center text-[14px]">
+              ✓
+            </span>
+            <span className="font-bold text-h3 text-navy">{good.title}</span>
+          </div>
+          <p className="mt-3 text-caption text-ink-2 font-light">{good.body}</p>
         </div>
       </div>
     </div>
