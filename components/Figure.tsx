@@ -6,6 +6,7 @@ import { imageSlot, suggestedSize, type Ratio } from "@/lib/images";
 const ratioClass: Record<Ratio, string> = {
   "16/9": "aspect-[16/9]",
   "4/3": "aspect-[4/3]",
+  "3/4": "aspect-[3/4]",
   "21/9": "aspect-[21/9]",
   "1/1": "aspect-square",
 };
@@ -40,13 +41,19 @@ export function Figure({
   priority?: boolean;
 }) {
   const slot = imageSlot(id);
-  const src = findImage(id);
+  // slot.file 讓兩個空位共用同一個檔案（例如首頁卡片與內頁插圖是同一張圖）
+  const src = findImage(slot.file ?? id);
+  // 有文字標示的圖解要用 contain，避免標示被裁掉；留邊顏色配圖片自身底色
+  const contain = slot.fit === "contain";
 
   return (
     <figure
       className={`bg-surface border border-ink/[.12] rounded-xl overflow-hidden ${className}`}
     >
-      <div className={`relative ${ratioClass[slot.ratio]}`}>
+      <div
+        className={`relative ${ratioClass[slot.ratio]}`}
+        style={contain && slot.mat ? { background: slot.mat } : undefined}
+      >
         {src ? (
           <Image
             src={src}
@@ -54,7 +61,7 @@ export function Figure({
             fill
             priority={priority}
             sizes="(max-width: 768px) 100vw, 1180px"
-            className="object-cover"
+            className={contain ? "object-contain" : "object-cover"}
           />
         ) : (
           <Placeholder slot={slot} />
