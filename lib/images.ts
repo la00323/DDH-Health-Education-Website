@@ -55,12 +55,11 @@ export const imageSlots: ImageSlot[] = [
     brief: "髖關節像「球放在碗裡」的示意",
     ratio: "16/9",
     fit: "contain",
-    mat: "#FCFCF0",
+    mat: "#FDFDEF",
     alt: "髖關節示意：股骨頭像球，髖臼像碗",
   },
   {
-    // ✅ 已補圖：嬰兒接受髖關節超音波檢查的插畫（直式）
-    // 卡片要維持 16:9 才能跟其他四張排整齊，所以這裡用 cover 取中段
+    // ✅ 已補圖：嬰兒接受髖關節超音波檢查的插畫。畫面本來就滿版到邊，用 cover
     id: "card-screening",
     brief: "嬰兒接受髖關節超音波檢查的樣子",
     ratio: "16/9",
@@ -72,7 +71,7 @@ export const imageSlots: ImageSlot[] = [
     brief: "月曆或時間軸，標出出生後 4–6 週",
     ratio: "16/9",
     fit: "contain",
-    mat: "#FCFCF0",
+    mat: "#FDFDEF",
     alt: "各月齡建議的髖關節檢查方式時間軸",
   },
   {
@@ -96,7 +95,7 @@ export const imageSlots: ImageSlot[] = [
     brief: "正常髖臼（碗夠深）與發育不良（碗太淺）並排對照",
     ratio: "16/9",
     fit: "contain",
-    mat: "#FCFCF0",
+    mat: "#FDFDEF",
     alt: "正常髖關節與發育不良髖關節對照",
     caption: "正常的髖臼夠深，能穩穩包住股骨頭；發育不良時碗太淺，球容易滑出去。",
     source: "A-001",
@@ -138,7 +137,7 @@ export const imageSlots: ImageSlot[] = [
     brief: "時間軸：各月齡分別用理學檢查、超音波、X 光",
     ratio: "16/9",
     fit: "contain",
-    mat: "#FCFCF0",
+    mat: "#FDFDEF",
     alt: "各月齡建議的髖關節檢查方式時間軸",
     caption:
       "不同月齡看的方式不一樣：六個月以前關鍵構造還是軟骨，要用超音波；六個月以後骨頭長出來了才改用 X 光。有危險因子的寶寶約在出生後四到六週安排超音波；若出生時理學檢查就摸到關節不穩，會提早在一到兩週內做。",
