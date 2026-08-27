@@ -148,9 +148,13 @@ export const imageSlots: ImageSlot[] = [
     source: "B-005 / C-001 / C-002",
   },
   {
+    // ✅ 已補圖：實際圖是 1672×941（正好 16:9），原本設 4/3 會被 object-cover
+    // 左右各裁掉約四分之一，所以改成 16/9 並用 contain，圖上的文字才不會被切。
     id: "risk-factors",
     brief: "危險因子一覽：臀位產、家族史、女嬰、第一胎、羊水過少、冬天出生、多胞胎",
-    ratio: "4/3",
+    ratio: "16/9",
+    fit: "contain",
+    mat: "#FAECD7",
     alt: "DDH 的常見危險因子",
     caption: "有這些因子只代表「需要被檢查」，不代表寶寶有問題。",
     source: "A-021",
@@ -167,11 +171,12 @@ export const imageSlots: ImageSlot[] = [
     source: "C-004 / C-005 / C-006",
   },
   {
+    // ✅ 已補圖：由 scripts/make_graf_types.py 產生，2400×1350
     id: "graf-types",
-    brief: "Graf 各分型的髖臼形狀對照（I、IIa、IIb、IIc、D、III、IV）",
+    brief: "Graf 分型對照表：各型的髖關節狀況、α／β 角、月齡與處置建議",
     ratio: "16/9",
-    alt: "Graf 各分型的髖關節形狀對照",
-    caption: "從 Type I 到 Type IV，碗越來越淺、球越來越往外。",
+    alt: "Graf 分型對照表，列出各分型的髖關節狀況、Alpha 角、Beta 角、適用月齡與處置建議",
+    caption: "從 Type I 到 Type IV，碗越來越淺、球越來越往外，處置也從「不用管」一路到「先復位」。",
     source: "C-004",
   },
 
