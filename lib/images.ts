@@ -158,9 +158,10 @@ export const imageSlots: ImageSlot[] = [
 
   // ── ④ 看懂結果 ────────────────────────────────
   {
+    // ✅ 已補圖：原圖 2754×1536，幾乎正好 16:9，所以把 4/3 改成 16/9
     id: "graf-angles",
-    brief: "Graf 量法：基準線、骨性髖臼頂（Alpha 角）、軟骨頂（Beta 角）",
-    ratio: "4/3",
+    brief: "超音波影像上的 Graf 量法：基準線、α 角、β 角，右側附骨骼對照",
+    ratio: "16/9",
     alt: "Graf 分類法的 Alpha 角與 Beta 角量法",
     caption: "Alpha 角量的是「碗有多深」，越大越好；Beta 角量的是「軟骨頂被推擠的程度」，越小越好。",
     source: "C-004 / C-005 / C-006",

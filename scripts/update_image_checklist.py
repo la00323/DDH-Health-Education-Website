@@ -20,6 +20,7 @@
 import os
 import re
 import glob
+import difflib
 
 from PIL import Image
 
@@ -143,21 +144,94 @@ def build_table(slots, usage):
     return header + "\n".join(rows) + "\n"
 
 
+def find_orphans(slots):
+    """
+    找出「放進資料夾但網站不會用到」的圖檔。
+
+    這是最容易踩到又最難自己發現的坑：檔名只要差一個字
+    （graft-angle vs graf-angles、card-result vs card-results），
+    網站就當作那張圖不存在，而且完全不會報錯，畫面上還是空框。
+    這裡把這種檔案抓出來，並猜最接近的代號給你參考。
+    """
+    known = {s["id"] for s in slots} | {s["file"] for s in slots if s["file"]}
+    orphans = []
+
+    for path in glob.glob(os.path.join(IMG_DIR, "**", "*"), recursive=True):
+        if os.path.isdir(path):
+            continue
+        stem, ext = os.path.splitext(os.path.basename(path))
+        if ext.lower().lstrip(".") not in EXTENSIONS:
+            continue
+
+        rel = os.path.relpath(path, IMG_DIR)
+        in_subfolder = os.sep in rel
+
+        if stem in known and not in_subfolder:
+            continue  # 正常，會被網站用到
+
+        # 猜最接近的代號
+        guess = difflib.get_close_matches(stem, sorted(known), n=1, cutoff=0.5)
+        if in_subfolder and stem in known:
+            reason = "放在子資料夾裡，網站只看 public/images/ 最上層"
+        elif in_subfolder:
+            reason = "放在子資料夾裡，而且檔名沒有對應的位置"
+        else:
+            reason = "檔名沒有對應到任何位置"
+
+        orphans.append({
+            "rel": rel,
+            "reason": reason,
+            "guess": guess[0] if guess else None,
+        })
+
+    return orphans
+
+
+def build_orphan_block(orphans):
+    if not orphans:
+        return "目前沒有這種檔案，資料夾裡每張圖都有對應的位置。\n"
+
+    lines = [
+        "以下檔案放在 `public/images/` 裡，但**網站不會用到**：\n",
+        "| 檔案 | 為什麼沒被用到 | 是不是想放這個位置？ |",
+        "|---|---|---|",
+    ]
+    for o in orphans:
+        guess = f"`{o['guess']}`" if o["guess"] else "—"
+        lines.append(f"| `{o['rel']}` | {o['reason']} | {guess} |")
+    lines.append("")
+    lines.append("改成右邊那一欄的檔名（副檔名不用改）就會自動上線。")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main():
-    table = build_table(read_slots(), read_usage())
+    slots = read_slots()
+    table = build_table(slots, read_usage())
+    orphans = find_orphans(slots)
+
     md = open(MD, encoding="utf-8").read()
 
-    new, n = re.subn(
-        r"<!-- AUTO -->\n.*?<!-- /AUTO -->",
-        lambda m: "<!-- AUTO -->\n" + table + "<!-- /AUTO -->",
-        md,
-        flags=re.S,
-    )
-    if n == 0:
-        raise SystemExit("圖片需求清單.md 裡找不到 <!-- AUTO --> 標記")
+    for marker, content in (("AUTO", table),
+                            ("AUTO-ORPHAN", build_orphan_block(orphans))):
+        md, n = re.subn(
+            rf"<!-- {marker} -->\n.*?<!-- /{marker} -->",
+            lambda m: f"<!-- {marker} -->\n{content}<!-- /{marker} -->",
+            md,
+            flags=re.S,
+        )
+        if n == 0:
+            raise SystemExit(f"圖片需求清單.md 裡找不到 <!-- {marker} --> 標記")
 
-    open(MD, "w", encoding="utf-8").write(new)
+    open(MD, "w", encoding="utf-8").write(md)
     print("圖片需求清單.md 的進度表已更新")
+
+    # 檔名對不上是最常見的失敗，所以在終端機也大聲講一次
+    if orphans:
+        print("\n⚠️  以下檔案不會出現在網站上：")
+        for o in orphans:
+            hint = f"  → 檔名改成 {o['guess']}？" if o["guess"] else ""
+            print(f"    {o['rel']}（{o['reason']}）{hint}")
 
 
 if __name__ == "__main__":
