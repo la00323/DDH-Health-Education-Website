@@ -22,9 +22,9 @@ export function QaList({
   const entries = getFaqs(ids);
 
   return (
-    <section className="mt-7">
+    <section className="[&:not(:first-child)]:mt-12">
       {title && (
-        <h2 className="font-bold font-serif text-h2 mb-5 mt-5">{title}</h2>
+        <h2 className="font-bold font-serif text-h2 mb-5">{title}</h2>
       )}
       <div className="bg-surface border border-ink/[.12] rounded-xl overflow-hidden">
         {entries.map((f) => (

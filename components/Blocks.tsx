@@ -35,7 +35,7 @@ export function ProcessSteps({
   steps: { title: string; body: ReactNode; meta?: string }[];
 }) {
   return (
-    <div className="grid gap-5 grid-cols-1 md:grid-cols-3 mt-8">
+    <div className="grid gap-5 grid-cols-1 md:grid-cols-3 [&:not(:first-child)]:mt-8">
       {steps.map((s, i) => (
         <div
           key={s.title}
@@ -64,7 +64,7 @@ export function Checklist({
   items: string[];
 }) {
   return (
-    <div className="border border-navy/25 bg-mint rounded-xl px-6 py-6 mt-6">
+    <div className="border border-navy/25 bg-mint rounded-xl px-6 py-6 [&:not(:first-child)]:mt-8">
       <div className="font-bold text-h3 text-navy">{title}</div>
       <ul className="mt-4 flex flex-col gap-3">
         {items.map((it) => (
@@ -95,7 +95,7 @@ export function DoDontPair({
   bad: { title: string; body: string };
 }) {
   return (
-    <div className="mt-6">
+    <div className="[&:not(:first-child)]:mt-8">
       {imageId && <Figure id={imageId} className="mb-5" />}
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
         <div className="border border-navy/25 bg-mint rounded-xl px-6 py-5">
@@ -131,7 +131,7 @@ export function SeveritySpectrum({
   stops: { label: string; note: string }[];
 }) {
   return (
-    <div className="mt-8">
+    <div className="[&:not(:first-child)]:mt-8">
       <div className="flex gap-1.5">
         {stops.map((s, i) => (
           <div
@@ -183,7 +183,7 @@ export function RiskFactorGrid({
   const title = tone === "primary" ? "text-navy" : "text-ink";
 
   return (
-    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 [&:not(:first-child)]:mt-8">
       {items.map((it) => (
         <div key={it.label} className={`${box} rounded-xl px-5 py-5 border`}>
           <div className={`font-bold text-h3 ${title}`}>{it.label}</div>
@@ -204,7 +204,7 @@ export function CriteriaGroups({
   groups: { title: string; note?: string; items: string[] }[];
 }) {
   return (
-    <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 mt-8">
+    <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 [&:not(:first-child)]:mt-8">
       {groups.map((g) => (
         <div
           key={g.title}
@@ -238,7 +238,7 @@ export function QuickRouter({
   items: { q: string; dest: string; href: string }[];
 }) {
   return (
-    <div className="bg-surface border border-ink/[.12] rounded-xl overflow-hidden mt-7">
+    <div className="bg-surface border border-ink/[.12] rounded-xl overflow-hidden [&:not(:first-child)]:mt-8">
       {items.map((it) => (
         <a
           key={it.q}
@@ -259,7 +259,7 @@ export function QuickRouter({
 /** 段落之間的「到這裡就夠了」停止訊號 */
 export function StopCue({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-8 py-5 text-center text-caption text-ink-2 border-t border-b border-ink/[.08]">
+    <p className="[&:not(:first-child)]:mt-8 py-5 text-center text-caption text-ink-2 border-t border-b border-ink/[.08]">
       {children}
     </p>
   );

@@ -252,9 +252,7 @@ export default function WhenToScreenPage() {
 
           <TopicNav current="/when-to-screen" />
 
-          <div className="mt-10">
-            <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
-          </div>
+          <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
         </div>
       </main>
       <Footer />

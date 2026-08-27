@@ -99,7 +99,7 @@ function Row({ r, big = false }: { r: Rung; big?: boolean }) {
 
 export function GrafLadder() {
   return (
-    <div className="mt-8 flex flex-col gap-3">
+    <div className="[&:not(:first-child)]:mt-8 flex flex-col gap-3">
       {headline.map((r) => (
         <Row key={r.type} r={r} big />
       ))}

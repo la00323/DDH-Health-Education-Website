@@ -59,23 +59,21 @@ export default function TreatmentPage() {
             <h2 className="mt-4 font-bold font-serif text-h2">
               什麼情況要立刻回診
             </h2>
-            <div className="mt-8">
-              <AlertBox
-                title="立即回診：出現以下任一狀況"
-                items={[
-                  "腳趾發紫、發白或冰冷",
-                  "吊帶下皮膚破皮、紅腫或壓傷",
-                  "吊帶鬆脫、綁帶位置跑掉",
-                  "石膏散發異味或明顯潮濕",
-                  "寶寶原本會踢腿，突然不踢了",
-                ]}
-                action={
-                  <>
-                    → 白天請聯絡個管師 {site.phone}；夜間直接掛急診
-                  </>
-                }
-              />
-            </div>
+            <AlertBox
+              title="立即回診：出現以下任一狀況"
+              items={[
+                "腳趾發紫、發白或冰冷",
+                "吊帶下皮膚破皮、紅腫或壓傷",
+                "吊帶鬆脫、綁帶位置跑掉",
+                "石膏散發異味或明顯潮濕",
+                "寶寶原本會踢腿，突然不踢了",
+              ]}
+              action={
+                <>
+                  → 白天請聯絡個管師 {site.phone}；夜間直接掛急診
+                </>
+              }
+            />
 
             <NoteBox title="建議您現在就做的三件事">
               把這一段存在手機裡（截圖或加入書籤）、把醫院聯絡電話設成快速撥號、讓所有照顧者都看過這份清單（另一半、長輩、保母）。
@@ -96,9 +94,7 @@ export default function TreatmentPage() {
             </Button>
           </div>
 
-          <div className="mt-10">
-            <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
-          </div>
+          <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
         </div>
       </main>
       <Footer />

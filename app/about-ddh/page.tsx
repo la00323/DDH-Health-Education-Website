@@ -164,9 +164,7 @@ export default function AboutDdhPage() {
 
           <TopicNav current="/about-ddh" />
 
-          <div className="mt-10">
-            <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
-          </div>
+          <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
         </div>
       </main>
       <Footer />

@@ -145,9 +145,7 @@ export default function ScreeningPage() {
 
           <TopicNav current="/screening" />
 
-          <div className="mt-10">
-            <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
-          </div>
+          <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
         </div>
       </main>
       <Footer />

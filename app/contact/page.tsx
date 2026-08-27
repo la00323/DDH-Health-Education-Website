@@ -55,29 +55,25 @@ export default function ContactPage() {
             <h2 className="font-bold font-serif text-h2">
               什麼情況該直接掛急診
             </h2>
-            <div className="mt-7">
-              <AlertBox
-                title="不要等下次回診，也不要等電話"
-                items={[
-                  "腳趾發紫、發白、發黑或冰冷",
-                  "寶寶原本會踢腿，突然不踢了",
-                  "腿部腫脹或完全無法活動",
-                  "皮膚出現傷口、破皮、滲液",
-                  "石膏濕透、變軟、裂開或散發異味",
-                  "發燒、呼吸費力、持續劇烈哭鬧無法安撫",
-                ]}
-                action="→ 夜間或假日請直接掛急診，不需要先打電話確認"
-              />
-            </div>
+            <AlertBox
+              title="不要等下次回診，也不要等電話"
+              items={[
+                "腳趾發紫、發白、發黑或冰冷",
+                "寶寶原本會踢腿，突然不踢了",
+                "腿部腫脹或完全無法活動",
+                "皮膚出現傷口、破皮、滲液",
+                "石膏濕透、變軟、裂開或散發異味",
+                "發燒、呼吸費力、持續劇烈哭鬧無法安撫",
+              ]}
+              action="→ 夜間或假日請直接掛急診，不需要先打電話確認"
+            />
 
             <NoteBox title="白天可以先打電話問的狀況">
               皮膚持續發紅、壓痕不退；石膏邊緣磨到皮膚；輔具反覆跑位或尺寸明顯不合；尿布反覆滲漏；餵食量明顯減少。
             </NoteBox>
           </section>
 
-          <div className="mt-10">
-            <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
-          </div>
+          <DisclaimerBox>{site.disclaimer}</DisclaimerBox>
         </div>
       </main>
       <Footer />
