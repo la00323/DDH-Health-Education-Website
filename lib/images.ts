@@ -75,10 +75,14 @@ export const imageSlots: ImageSlot[] = [
     alt: "各月齡建議的髖關節檢查方式時間軸",
   },
   {
+    // ✅ 已補圖：用程式畫的示意報告單（scratchpad/make_card_results.py）
+    // 這張圖只出現在首頁卡片，實際只有約 380px 寬，所以刻意只放兩個大數字
     id: "card-results",
     brief: "超音波報告單，標出 Type 與 Alpha 角的位置",
     ratio: "16/9",
-    alt: "髖關節超音波報告",
+    fit: "contain",
+    mat: "#FDFDEF",
+    alt: "超音波報告示意：分型 Type I、Alpha 角 64 度，判讀正常",
   },
   {
     id: "card-daily",
