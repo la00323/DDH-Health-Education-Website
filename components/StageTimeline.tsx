@@ -69,7 +69,7 @@ export function StageTimeline({ defaultStage = 0 }: { defaultStage?: number }) {
                 </div>
                 <h3
                   className={`mt-2 font-bold leading-[1.4] ${
-                    on ? "text-[22px]" : "text-base"
+                    on ? "text-h3" : "text-caption"
                   }`}
                 >
                   {s.name}

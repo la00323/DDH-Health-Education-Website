@@ -27,7 +27,7 @@ export function AlertBox({
 }) {
   return (
     <div className="border-[1.5px] border-alert bg-alert-bg rounded-lg px-6 py-[22px] [&:not(:first-child)]:mt-8">
-      <div className="font-bold text-sm text-alert mb-3">{title}</div>
+      <div className="font-bold text-h3 text-alert mb-3">{title}</div>
       <div className="flex flex-col gap-[9px] text-body leading-[1.8] text-[#3d3b36] font-light">
         {items.map((it) => (
           <div key={it} className="flex gap-2.5">
@@ -52,7 +52,7 @@ export function NoteBox({
 }) {
   return (
     <div className="border-l-4 border-navy bg-mint rounded-r-lg px-6 py-[22px] [&:not(:first-child)]:mt-8">
-      <div className="font-bold text-sm text-navy mb-2.5">{title}</div>
+      <div className="font-bold text-h3 text-navy mb-3">{title}</div>
       <p className="text-body leading-[1.85] text-[#3d3b36] font-light">
         {children}
       </p>

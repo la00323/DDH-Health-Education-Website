@@ -34,7 +34,7 @@ function QuestionRow({ entry, open, onToggle }: { entry: FaqEntry; open: boolean
             立即回診
           </span>
         )}
-        <span className="shrink-0 font-mono text-lg text-ink-3">
+        <span className="shrink-0 font-mono text-h3 text-ink-3">
           {open ? "–" : "+"}
         </span>
       </button>

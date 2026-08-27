@@ -17,14 +17,14 @@ export function Header() {
           <Image
             src="/logo.jpg"
             alt="高雄榮總小兒髖關節發育不良個案管理標誌"
-            width={38}
-            height={38}
+            width={48}
+            height={48}
             className="rounded-full"
           />
-          <span className="font-bold text-body">DDH 家長照護指南</span>
+          <span className="font-bold text-h3 whitespace-nowrap">DDH 家長照護指南</span>
         </Link>
 
-        <nav className="hidden lg:flex gap-5 flex-1 ml-4">
+        <nav className="hidden lg:flex gap-4 xl:gap-5 flex-1 ml-3 xl:ml-4">
           {nav.map((item) => {
             const active = pathname === item.href;
             return (
