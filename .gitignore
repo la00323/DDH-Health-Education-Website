@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# public/images 底下的子資料夾（放草稿、替換候選用）
+# 網站只讀最上層，這些檔案不會上線，也不需要進版控
+public/images/*/
