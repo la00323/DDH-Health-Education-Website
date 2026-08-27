@@ -52,7 +52,7 @@ export const imageSlots: ImageSlot[] = [
     // ✅ 已補圖：正常髖關節 vs 髖關節發育不良 對照圖
     // 圖上有中文標示，所以用 contain（完整顯示），留邊配圖片本身的米白底色
     id: "card-about",
-    brief: "髖關節像「球放在碗裡」的示意",
+    brief: "骨盆全景，兩側放大對照：正常髖關節 vs 髖關節發育不良",
     ratio: "16/9",
     fit: "contain",
     mat: "#FDFDEF",
@@ -61,14 +61,14 @@ export const imageSlots: ImageSlot[] = [
   {
     // ✅ 已補圖：嬰兒接受髖關節超音波檢查的插畫。畫面本來就滿版到邊，用 cover
     id: "card-screening",
-    brief: "嬰兒接受髖關節超音波檢查的樣子",
+    brief: "嬰兒側躺、探頭貼在髖部，接受髖關節超音波檢查",
     ratio: "16/9",
     alt: "嬰兒接受髖關節超音波檢查",
   },
   {
     // ✅ 已補圖：各月齡該用哪種檢查的時間軸
     id: "card-when",
-    brief: "月曆或時間軸，標出出生後 4–6 週",
+    brief: "各月齡檢查方式時間軸：理學檢查 → 超音波 → X 光",
     ratio: "16/9",
     fit: "contain",
     mat: "#FDFDEF",
@@ -78,7 +78,7 @@ export const imageSlots: ImageSlot[] = [
     // ✅ 已補圖：用程式畫的示意報告單（scratchpad/make_card_results.py）
     // 這張圖只出現在首頁卡片，實際只有約 380px 寬，所以刻意只放兩個大數字
     id: "card-results",
-    brief: "超音波報告單，標出 Type 與 Alpha 角的位置",
+    brief: "示意報告單：分型 Type I、α 角 64°、判讀正常",
     ratio: "16/9",
     fit: "contain",
     mat: "#FDFDEF",
