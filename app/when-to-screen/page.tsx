@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { TopicPageHeader, TopicNav } from "@/components/Topic";
-import { RiskFactorGrid, ProcessSteps } from "@/components/Blocks";
+import { RiskFactorGrid, CriteriaGroups, ProcessSteps } from "@/components/Blocks";
 import { QaList } from "@/components/QaList";
 import { Figure } from "@/components/Figure";
 import { Markdown } from "@/components/Markdown";
@@ -90,44 +90,82 @@ export default function WhenToScreenPage() {
               哪些寶寶會被安排檢查
             </div>
             <h2 className="mt-4 font-bold font-serif text-h2">
-              您的寶寶可能符合其中一項
+              本院的收案條件
             </h2>
             <p className="mt-5 text-lede text-ink-2 font-light">
-              小兒骨科用「5F's」記住五個典型的高風險特徵。
+              本院兒童骨科的個案管理，收案條件分成兩類：出生時就知道的好發因子，
+              以及檢查之後才發現的異常。
               <span className="font-medium text-ink">
-                符合其中一項只代表「需要被檢查」，不代表寶寶有問題。
+                符合其中一項只代表「需要被追蹤」，不代表寶寶有問題。
+              </span>
+            </p>
+
+            <Figure id="risk-factors" className="mt-8" />
+
+            {/* 順序跟院內文件與上面那張圖一致：1. 檢查結果為主、2. 好發因子 */}
+            <h3 className="mt-12 font-bold font-serif text-h3">
+              一、以檢查結果為主
+            </h3>
+            <p className="mt-2 text-caption text-ink-2 font-light">
+              醫師或護理師檢查之後才知道的項目。符合任一項就會收案。
+            </p>
+
+            <CriteriaGroups
+              groups={[
+                {
+                  title: "身體檢查呈陽性",
+                  note: "醫師徒手檢查",
+                  items: [
+                    "關節不穩（Barlow test）",
+                    "關節脫臼（Ortolani test）",
+                    "長短腿（Galeazzi test）",
+                    "大腿外展受限：一隻腳打不開、一隻腳正常打開",
+                  ],
+                },
+                {
+                  title: "髖關節超音波",
+                  note: "Graf 分型",
+                  items: ["IIa、IIb、IIc", "D", "III、IV"],
+                },
+                {
+                  title: "子宮內壓迫徵象",
+                  note: "和 DDH 是同一個原因造成的不同結果",
+                  items: [
+                    "斜頸（torticolli）",
+                    "足踝變形（metatarsus adductus、pes calcaneus）",
+                    "膝反曲（congenital dislocation of the knee）",
+                    "大腿姿勢不對稱",
+                  ],
+                },
+              ]}
+            />
+
+            <h3 className="mt-12 font-bold font-serif text-h3">二、好發因子</h3>
+            <p className="mt-2 text-caption text-ink-2 font-light">
+              出生時就知道的條件。
+              <span className="font-medium text-ink">
+                大多數家長是因為這一類被安排檢查，而這一類的寶寶絕大多數是正常的。
               </span>
             </p>
 
             <RiskFactorGrid
               items={[
-                { label: "女嬰", line: "約佔 DDH 的 80%，女男比約 6 比 1。" },
-                { label: "第一胎", line: "第一胎的子宮空間較緊。" },
                 {
                   label: "臀位產",
                   line: "證據力最強的因子之一。但絕大多數臀位寶寶的髖關節是完全正常的。",
                 },
                 {
                   label: "家族史",
-                  line: "手足有過 6%、父母一方有過 12%。",
+                  line: "手足有 DDH，寶寶的發生率約 6%；父母一方有 DDH，約 12%。家族中有人在 40–50 歲前就換人工髖關節，也算。",
                 },
-                { label: "左側", line: "DDH 特別好發於左側髖關節。" },
-                { label: "羊水過少", line: "子宮內的活動空間受限。" },
-                { label: "冬天出生", line: "包裹通常較厚、較緊。" },
+                { label: "產前羊水過少", line: "子宮內的活動空間受限。" },
                 { label: "多胞胎", line: "子宮內空間更受限。" },
               ]}
             />
 
-            <Figure id="risk-factors" className="mt-8" />
-
-            <SummaryBox>
-              5F&rsquo;s 只是幫助記憶的口訣，不是篩檢標準。超過 75% 的 DDH
-              寶寶並不符合這些典型因子——有 5F 要更警覺，沒有 5F 也不能鬆懈。這也是為什麼影像篩檢有它的價值。
-            </SummaryBox>
-
             {/* A-011 的 36% 一定要附上 64% 的反面 */}
             <NoteBox title="關於家族史的數字">
-              手足有過 DDH，下一個孩子的機率約 6%；父母一方有過約 12%；父母一方加上手足都有過，最高到
+              手足有 DDH，寶寶的發生率約 6%；父母一方有 DDH，約 12%；父母一方加上手足都有，最高到
               36%。
               <br />
               <br />
@@ -137,6 +175,32 @@ export default function WhenToScreenPage() {
               </span>
               ；一般族群則是 99.85% 不會有 DDH。
             </NoteBox>
+
+            <h3 className="mt-12 font-bold font-serif text-h3">
+              其他文獻記載的風險因子
+            </h3>
+            <p className="mt-2 text-caption text-ink-2 font-light">
+              以下這些在文獻中確實與 DDH 有關，醫師也會參考，
+              <span className="font-medium text-ink">
+                但不是本院個案管理的收案條件
+              </span>
+              。只符合這幾項、沒有上面兩類條件的寶寶，不會被收案。
+            </p>
+
+            <RiskFactorGrid
+              tone="muted"
+              items={[
+                { label: "女嬰", line: "約佔 DDH 的 80%，女男比約 6 比 1。" },
+                { label: "第一胎", line: "第一胎的子宮空間較緊。" },
+                { label: "左側", line: "DDH 特別好發於左側髖關節。" },
+                { label: "冬天出生", line: "包裹通常較厚、較緊。" },
+              ]}
+            />
+
+            <SummaryBox>
+              這些條件都不是篩檢標準。超過 75% 的 DDH
+              寶寶並不符合任何典型危險因子——符合要更警覺，不符合也不能鬆懈。這也是為什麼影像篩檢有它的價值。
+            </SummaryBox>
           </section>
 
           {/* 正常了為什麼還要回來 */}

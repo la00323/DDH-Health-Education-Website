@@ -160,29 +160,71 @@ export function SeveritySpectrum({
   );
 }
 
-/** 風險因子格。沿用 LINE 四格選單的粉彩色。 */
+/**
+ * 因子格。
+ *
+ * 顏色只用來區分「是不是本院的收案條件」，不是裝飾——
+ * 原本四色輪流上色會讓讀者以為顏色代表嚴重度，反而製造誤解。
+ *
+ * - primary（薄荷綠）：本院的收案條件
+ * - muted（白底）：文獻有記載，但不是本院收案條件
+ */
 export function RiskFactorGrid({
   items,
+  tone = "primary",
 }: {
   items: { label: string; line: string }[];
+  tone?: "primary" | "muted";
 }) {
-  const tones = [
-    "bg-menu-blue",
-    "bg-menu-green",
-    "bg-menu-yellow",
-    "bg-menu-pink",
-  ];
+  const box =
+    tone === "primary"
+      ? "bg-mint border-navy/25"
+      : "bg-surface border-ink/[.12]";
+  const title = tone === "primary" ? "text-navy" : "text-ink";
+
   return (
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8">
-      {items.map((it, i) => (
+      {items.map((it) => (
+        <div key={it.label} className={`${box} rounded-xl px-5 py-5 border`}>
+          <div className={`font-bold text-h3 ${title}`}>{it.label}</div>
+          <p className="mt-2 text-caption text-ink-2 font-light">{it.line}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/**
+ * 分組條列。用在「檢查發現了什麼」這種一個標題底下掛好幾個項目的內容。
+ * 刻意不編號——這些是「符合任一項」的並列關係，不是先後順序。
+ */
+export function CriteriaGroups({
+  groups,
+}: {
+  groups: { title: string; note?: string; items: string[] }[];
+}) {
+  return (
+    <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 mt-8">
+      {groups.map((g) => (
         <div
-          key={it.label}
-          className={`${tones[i % 4]} rounded-xl px-5 py-5 border border-ink/[.08]`}
+          key={g.title}
+          className="bg-surface border border-ink/[.12] rounded-xl px-5 py-5"
         >
-          <div className="font-bold text-h3 text-[#3A2E23]">{it.label}</div>
-          <p className="mt-2 text-caption text-[#5C4B3B] font-light">
-            {it.line}
-          </p>
+          <div className="font-bold text-h3">{g.title}</div>
+          {g.note && (
+            <p className="mt-2 text-caption text-ink-3 font-light">{g.note}</p>
+          )}
+          <ul className="mt-3 flex flex-col gap-2">
+            {g.items.map((it) => (
+              <li
+                key={it}
+                className="flex gap-2.5 items-start text-caption text-ink-2 font-light"
+              >
+                <span className="shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-navy/50" />
+                <span>{it}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
