@@ -188,7 +188,6 @@ export default function WhenToScreenPage() {
             </p>
 
             <RiskFactorGrid
-              tone="muted"
               items={[
                 { label: "女嬰", line: "約佔 DDH 的 80%，女男比約 6 比 1。" },
                 { label: "第一胎", line: "第一胎的子宮空間較緊。" },

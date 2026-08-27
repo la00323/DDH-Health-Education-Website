@@ -163,30 +163,23 @@ export function SeveritySpectrum({
 /**
  * 因子格。
  *
- * 顏色只用來區分「是不是本院的收案條件」，不是裝飾——
- * 原本四色輪流上色會讓讀者以為顏色代表嚴重度，反而製造誤解。
- *
- * - primary（薄荷綠）：本院的收案條件
- * - muted（白底）：文獻有記載，但不是本院收案條件
+ * 全部白底，跟 CriteriaGroups 長得一模一樣——因為它們是同一件事的兩半，
+ * 用不同顏色反而會讓讀者以為有輕重之分。
+ * 「是不是本院收案條件」的區別由小標題與說明文字負責，不靠顏色。
  */
 export function RiskFactorGrid({
   items,
-  tone = "primary",
 }: {
   items: { label: string; line: string }[];
-  tone?: "primary" | "muted";
 }) {
-  const box =
-    tone === "primary"
-      ? "bg-mint border-navy/25"
-      : "bg-surface border-ink/[.12]";
-  const title = tone === "primary" ? "text-navy" : "text-ink";
-
   return (
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 [&:not(:first-child)]:mt-8">
       {items.map((it) => (
-        <div key={it.label} className={`${box} rounded-xl px-5 py-5 border`}>
-          <div className={`font-bold text-h3 ${title}`}>{it.label}</div>
+        <div
+          key={it.label}
+          className="bg-surface border border-ink/[.12] rounded-xl px-5 py-5"
+        >
+          <div className="font-bold text-h3">{it.label}</div>
           <p className="mt-2 text-caption text-ink-2 font-light">{it.line}</p>
         </div>
       ))}
