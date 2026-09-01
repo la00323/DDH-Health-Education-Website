@@ -20,7 +20,7 @@ export default function ScreeningPage() {
       <Header />
       <main className="flex-1">
         <TopicPageHeader
-          eyebrow="② 超音波檢查"
+          eyebrow="③ 超音波檢查"
           title="超音波能幫上什麼忙"
           lede="這一頁說明為什麼醫師請您來照一次超音波，以及檢查那天實際會發生什麼事。"
         />

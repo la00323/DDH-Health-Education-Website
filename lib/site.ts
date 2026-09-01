@@ -34,7 +34,14 @@ export type TopicRoute = {
   image: string;
 };
 
-/** 五個主題頁，順序即為上下頁導引的順序 */
+/**
+ * 五個主題頁，順序即為導覽列、首頁卡片與上下頁導引的順序。
+ *
+ * 「日常照護」刻意排在第二位、緊接著「DDH 是什麼」——它是家長在等待
+ * 期間唯一能自己動手做、而且有實證支持的事，不該被三頁檢查說明擋在後面。
+ * 各頁頁首的圈數字（① ② ③…）是寫死在各自的 page.tsx 裡的，
+ * 動這個陣列的順序時要一起改。
+ */
 export const topics: TopicRoute[] = [
   {
     href: "/about-ddh",
@@ -43,6 +50,14 @@ export const topics: TopicRoute[] = [
     blurb: "髖關節就是一個球放在碗裡。碗太淺、或球沒好好待在碗裡，就是 DDH。",
     lede: "先把名詞弄清楚，後面的檢查與報告才看得懂。這一頁不會有任何需要您現在做的事。",
     image: "card-about",
+  },
+  {
+    href: "/daily-care",
+    label: "日常照護",
+    title: "日常可以怎麼幫寶寶",
+    blurb: "包開開、抱開開、背開開。免費、不需要器材，而且是少數被證實有效的做法。",
+    lede: "這是等待期間您真正能做的事——而且它的效果有實證支持，不是安慰性質的建議。",
+    image: "card-daily",
   },
   {
     href: "/screening",
@@ -67,14 +82,6 @@ export const topics: TopicRoute[] = [
     blurb: "拿到報告，只要看三件事：第幾型、Alpha 角多少、跟上次比是進步還退步。",
     lede: "這一頁是給拿到髖關節超音波報告的家長。如果寶寶還沒照，可以先看「什麼時候該檢查」。",
     image: "card-results",
-  },
-  {
-    href: "/daily-care",
-    label: "日常照護",
-    title: "日常可以怎麼幫寶寶",
-    blurb: "包開開、抱開開、背開開。免費、不需要器材，而且是少數被證實有效的做法。",
-    lede: "這是等待期間您真正能做的事——而且它的效果有實證支持，不是安慰性質的建議。",
-    image: "card-daily",
   },
 ];
 

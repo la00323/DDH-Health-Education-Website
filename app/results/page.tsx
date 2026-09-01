@@ -24,7 +24,7 @@ export default function ResultsPage() {
       <Header />
       <main className="flex-1">
         <TopicPageHeader
-          eyebrow="④ 看懂檢查結果"
+          eyebrow="⑤ 看懂檢查結果"
           title="拿到報告，只要看三件事"
           lede="這一頁是給拿到髖關節超音波報告的家長。如果寶寶還沒照，可以先看「什麼時候該檢查」。"
         />
