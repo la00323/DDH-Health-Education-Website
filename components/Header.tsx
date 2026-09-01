@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav } from "@/lib/site";
@@ -12,22 +11,16 @@ export function Header() {
 
   return (
     <header className="bg-surface border-b border-ink/10 sticky top-0 z-30">
-      <div className="max-w-[1180px] mx-auto flex items-center gap-4 px-4 sm:px-6 py-3">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          {/*
-            圓章本身細節很多（外圈有中英文字），太小就糊成一團深色斑點。
-            手機 52px、桌機 60px；原圖 1024×1024，放大不會糊。
-            width/height 給 60 是讓 next/image 產生足夠解析度，
-            實際顯示尺寸由後面的 w-/h- 決定。
-          */}
-          <Image
-            src="/logo.jpg"
-            alt="高雄榮總小兒髖關節發育不良個案管理標誌"
-            width={60}
-            height={60}
-            priority
-            className="rounded-full w-[52px] h-[52px] sm:w-[60px] sm:h-[60px]"
-          />
+      <div className="max-w-[1180px] mx-auto flex items-center gap-4 px-4 sm:px-6 py-4">
+        {/*
+          這裡刻意只有文字，沒有院徽。
+
+          圓章細節很多（外圈有中英文字），縮到 52–60px 就糊成一團深色斑點；
+          而且首頁橫幅的識別列已經把院徽以 64–80px 好好呈現一次了，
+          兩個圓章在同一個畫面上下相隔 200px 只是重複。
+          拿掉之後導覽列也多出約 70px，1280px 下不再擠。
+        */}
+        <Link href="/" className="shrink-0">
           <span className="font-bold text-h3 whitespace-nowrap">DDH 家長照護指南</span>
         </Link>
 
