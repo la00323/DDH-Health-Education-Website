@@ -88,20 +88,60 @@ export function DoDontPair({
   imageId,
   good,
   bad,
+  compact = false,
 }: {
   /** 對照圖的空位代號，省略則只顯示文字 */
   imageId?: string;
-  good: { title: string; body: string };
-  bad: { title: string; body: string };
+  good: { title: string; body?: string };
+  bad: { title: string; body?: string };
+  /**
+   * 精簡版：只留一列兩格的單行對照，不顯示 body。
+   *
+   * 用在圖本身就已經把正確／錯誤寫在畫面上的段落（包巾、抱姿、揹巾）。
+   * 那裡再放兩張大卡等於把圖上的字再打一次。
+   * 但這一行不能省——圖上的中文標示在手機寬度下只剩 5–8px，
+   * 家長讀不到，讀螢幕軟體與搜尋引擎也讀不到圖裡的字。
+   * 這一行是手機讀者唯一讀得到的一層。
+   */
+  compact?: boolean;
 }) {
   return (
     <div className="[&:not(:first-child)]:mt-8">
-      {imageId && <Figure id={imageId} className="mb-5" />}
+      {/* 對照圖都是滿版中文標示的圖解，手機上看不清，一定要能點開放大 */}
+      {imageId && <Figure id={imageId} className="mb-5" zoom />}
       {/*
         左錯右對，順序刻意跟上方的對照圖一致。
         三張對照圖（包巾、抱姿、揹巾）都是「錯誤在左、正確在右」，
         文字卡如果反過來排，圖跟字會左右鏡像，家長會看錯邊。
+        compact 版同樣要守這個順序。
       */}
+      {compact ? (
+        /*
+          手機上刻意不並排。
+          375px 扣掉左右留白只剩 327px，切成兩欄後每行塞不到 6 個字，
+          「窄襠，雙腿懸垂成 I 字」會斷成三行。這一行是手機讀者唯一
+          讀得到的一層，寧可佔兩列也要讓它一行讀完。
+          上下排時「錯誤在上、正確在下」，跟並排時的左右順序一致。
+        */
+        <div className="grid gap-3 grid-cols-1 sm:grid-cols-2">
+          <div className="border border-ink/15 bg-[#F5F2E9] rounded-xl px-4 py-3.5 flex gap-2.5 items-start">
+            <span className="shrink-0 mt-0.5 w-[22px] h-[22px] rounded-full bg-ink-3 text-white inline-flex items-center justify-center text-[13px]">
+              ✕
+            </span>
+            <span className="font-medium text-body leading-[1.5] text-ink-2">
+              {bad.title}
+            </span>
+          </div>
+          <div className="border border-navy/25 bg-mint rounded-xl px-4 py-3.5 flex gap-2.5 items-start">
+            <span className="shrink-0 mt-0.5 w-[22px] h-[22px] rounded-full bg-navy text-white inline-flex items-center justify-center text-[13px]">
+              ✓
+            </span>
+            <span className="font-medium text-body leading-[1.5] text-navy">
+              {good.title}
+            </span>
+          </div>
+        </div>
+      ) : (
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
         <div className="border border-ink/15 bg-[#F5F2E9] rounded-xl px-6 py-5">
           <div className="flex gap-2.5 items-center">
@@ -110,7 +150,9 @@ export function DoDontPair({
             </span>
             <span className="font-bold text-h3 text-ink-2">{bad.title}</span>
           </div>
-          <p className="mt-3 text-caption text-ink-2 font-light">{bad.body}</p>
+          {bad.body && (
+            <p className="mt-3 text-caption text-ink-2 font-light">{bad.body}</p>
+          )}
         </div>
         <div className="border border-navy/25 bg-mint rounded-xl px-6 py-5">
           <div className="flex gap-2.5 items-center">
@@ -119,9 +161,12 @@ export function DoDontPair({
             </span>
             <span className="font-bold text-h3 text-navy">{good.title}</span>
           </div>
-          <p className="mt-3 text-caption text-ink-2 font-light">{good.body}</p>
+          {good.body && (
+            <p className="mt-3 text-caption text-ink-2 font-light">{good.body}</p>
+          )}
         </div>
       </div>
+      )}
     </div>
   );
 }
