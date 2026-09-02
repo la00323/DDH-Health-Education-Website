@@ -24,7 +24,7 @@ export default function WhenToScreenPage() {
       <Header />
       <main className="flex-1">
         <TopicPageHeader
-          eyebrow="③ 什麼時候該檢查"
+          eyebrow="④ 什麼時候該檢查"
           title="什麼時候該檢查"
           lede="如果醫師告訴您「寶寶屬於高風險，過幾週回來照」，這一頁是專門寫給您的。"
         />
